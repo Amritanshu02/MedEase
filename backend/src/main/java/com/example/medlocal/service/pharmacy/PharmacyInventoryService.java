@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -80,6 +81,37 @@ public class PharmacyInventoryService {
 
     public List<PharmacyInventory> getAvailableMedicineInventory(Long medicineId) {
         return inventoryRepository.findAvailableByMedicineId(medicineId);
+    }
+
+    /**
+     * Find medicine inventory across all pharmacies (for cross-pharmacy search)
+     * @param medicineId ID of the medicine to search for
+     * @return list of pharmacy inventory records for this medicine across all pharmacies
+     */
+    public List<PharmacyInventory> getMedicineInventoryAcrossPharmacies(Long medicineId) {
+        return inventoryRepository.findByMedicineId(medicineId);
+    }
+
+    /**
+     * Search for medicines by name across all pharmacies and return pricing/stock information
+     * @param medicineName name or partial name of medicine to search for
+     * @return list of pharmacy inventory records matching the medicine search
+     */
+    public List<PharmacyInventory> searchMedicineAcrossPharmacies(String medicineName) {
+        // First find medicines matching the name
+        List<Medicine> medicines = medicineRepository.findByNameContainingIgnoreCase(medicineName);
+        if (medicines.isEmpty()) {
+            // Also try generic name search
+            medicines = medicineRepository.findByGenericNameContainingIgnoreCase(medicineName);
+        }
+
+        // Get inventory for all matching medicines
+        List<PharmacyInventory> allInventory = new ArrayList<>();
+        for (Medicine medicine : medicines) {
+            List<PharmacyInventory> inventory = inventoryRepository.findByMedicineId(medicine.getId());
+            allInventory.addAll(inventory);
+        }
+        return allInventory;
     }
 
     public Optional<PharmacyInventory> getInventoryByPharmacyAndMedicine(Long pharmacyId, Long medicineId) {

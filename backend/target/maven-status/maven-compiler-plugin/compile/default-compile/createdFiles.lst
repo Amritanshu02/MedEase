@@ -29,6 +29,7 @@ com\example\medlocal\repository\pharmacy\PharmacyRepository.class
 com\example\medlocal\repository\pharmacy\MedicineRepository.class
 com\example\medlocal\service\pharmacy\PharmacyLocationService.class
 com\example\medlocal\security\dtos\pharmacy\PharmacyLocationResponse$PharmacyLocationResponseBuilder.class
+com\example\medlocal\service\pharmacy\MedicineCsvUploadService$MedicineCsvUploadError.class
 com\example\medlocal\model\User.class
 com\example\medlocal\security\dtos\LoginResponse.class
 com\example\medlocal\security\dtos\pharmacy\PharmacyLocationResponse.class
@@ -36,6 +37,7 @@ com\example\medlocal\repository\pharmacy\PharmacyLocationRepository.class
 com\example\medlocal\model\pharmacy\Pharmacy.class
 com\example\medlocal\controller\pharmacy\PharmacyController$MedicineRequest.class
 com\example\medlocal\security\dtos\pharmacy\PharmacyRegisterRequest$PharmacyRegisterRequestBuilder.class
+com\example\medlocal\service\pharmacy\MedicineCsvUploadService$MedicineCsvUploadResponse.class
 com\example\medlocal\security\SecurityConfig.class
 com\example\medlocal\security\dtos\pharmacy\PharmacyInventoryResponse.class
 com\example\medlocal\model\User$UserBuilder.class
@@ -43,6 +45,7 @@ com\example\medlocal\model\pharmacy\Medicine$MedicineBuilder.class
 com\example\medlocal\model\pharmacy\PharmacyInventory.class
 com\example\medlocal\model\pharmacy\PharmacyLocation.class
 com\example\medlocal\model\User$Role.class
+com\example\medlocal\service\pharmacy\MedicineCsvUploadService.class
 com\example\medlocal\controller\HealthController.class
 com\example\medlocal\service\pharmacy\PharmacyInventoryService.class
 com\example\medlocal\MedlocalApplication.class

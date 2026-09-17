@@ -26,6 +26,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import com.example.medlocal.service.pharmacy.MedicineCsvUploadService;
 
 import java.util.List;
 import java.util.Optional;
@@ -40,6 +42,7 @@ public class PharmacyController {
     private final PharmacyLocationService pharmacyLocationService;
     private final MedicineService medicineService;
     private final PharmacyInventoryService pharmacyInventoryService;
+    private final MedicineCsvUploadService medicineCsvUploadService;
     private final AuthenticationManager authenticationManager;
     private final UserDetailsService userDetailsService;
     private final JwtTokenUtil jwtTokenUtil;
@@ -325,6 +328,32 @@ public class PharmacyController {
         }
     }
 
+    @GetMapping("/medicines/search")
+    public ResponseEntity<?> searchMedicineAcrossPharmacies(@RequestParam String name) {
+        try {
+            List<PharmacyInventory> inventoryList = pharmacyInventoryService.searchMedicineAcrossPharmacies(name);
+            List<PharmacyInventoryResponse> responses = inventoryList.stream()
+                    .map(inventory -> PharmacyInventoryResponse.builder()
+                            .id(inventory.getId())
+                            .pharmacyId(inventory.getPharmacy().getId())
+                            .pharmacyName(inventory.getPharmacy().getName())
+                            .medicineId(inventory.getMedicine().getId())
+                            .medicineName(inventory.getMedicine().getName())
+                            .genericName(inventory.getMedicine().getGenericName())
+                            .stockQuantity(inventory.getStockQuantity())
+                            .price(inventory.getPrice())
+                            .isAvailable(inventory.getIsAvailable())
+                            .expiryDate(inventory.getExpiryDate())
+                            .createdAt(inventory.getCreatedAt())
+                            .updatedAt(inventory.getUpdatedAt())
+                            .build())
+                    .collect(Collectors.toList());
+            return ResponseEntity.ok(responses);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Internal server error: " + e.getMessage());
+        }
+    }
+
     // Pharmacy Inventory Endpoints
     @PostMapping("/{pharmacyId}/inventory")
     public ResponseEntity<?> addOrUpdateInventory(@PathVariable Long pharmacyId, @RequestBody PharmacyInventoryRequest request) {
@@ -427,6 +456,31 @@ public class PharmacyController {
                             .build())
                     .collect(Collectors.toList());
             return ResponseEntity.ok(responses);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Internal server error: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Upload medicines via CSV file.
+     * Expected CSV format: name,genericName,brandName,description,category,subCategory,requiresPrescription
+     *
+     * @param file CSV file containing medicine data
+     * @return Upload result with success/error counts and details
+     */
+    @PostMapping("/medicines/upload")
+    public ResponseEntity<?> uploadMedicinesCsv(@RequestParam("file") MultipartFile file) {
+        try {
+            if (file.isEmpty()) {
+                return ResponseEntity.badRequest().body("Please upload a CSV file");
+            }
+
+            if (!file.getOriginalFilename().toLowerCase().endsWith(".csv")) {
+                return ResponseEntity.badRequest().body("Please upload a CSV file");
+            }
+
+            MedicineCsvUploadService.MedicineCsvUploadResponse response = medicineCsvUploadService.processCsvUpload(file);
+            return ResponseEntity.ok(response);
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Internal server error: " + e.getMessage());
         }
