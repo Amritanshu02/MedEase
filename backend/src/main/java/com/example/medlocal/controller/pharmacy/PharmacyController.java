@@ -401,6 +401,37 @@ public class PharmacyController {
         }
     }
 
+    @GetMapping("/nearby")
+    public ResponseEntity<?> getNearbyPharmacies(@RequestParam Double latitude, @RequestParam Double longitude, @RequestParam Double radius) {
+        try {
+            List<PharmacyLocation> nearbyLocations = pharmacyLocationService.findNearby(longitude, latitude, radius);
+            List<PharmacyLocationResponse> responses = nearbyLocations.stream()
+                    .map(location -> PharmacyLocationResponse.builder()
+                            .id(location.getId())
+                            .pharmacyId(location.getPharmacy().getId())
+                            .pharmacyName(location.getPharmacy().getName())
+                            .locationName(location.getLocationName())
+                            .addressLine1(location.getAddressLine1())
+                            .addressLine2(location.getAddressLine2())
+                            .city(location.getCity())
+                            .state(location.getState())
+                            .postalCode(location.getPostalCode())
+                            .country(location.getCountry())
+                            .phone(location.getPhone())
+                            .latitude(location.getCoordinates() != null ? location.getCoordinates().getY() : null)
+                            .longitude(location.getCoordinates() != null ? location.getCoordinates().getX() : null)
+                            .isPrimary(location.getIsPrimary())
+                            .isActive(location.getIsActive())
+                            .createdAt(location.getCreatedAt())
+                            .updatedAt(location.getUpdatedAt())
+                            .build())
+                    .collect(Collectors.toList());
+            return ResponseEntity.ok(responses);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Internal server error: " + e.getMessage());
+        }
+    }
+
     // DTO classes for requests (since we don't have them yet)
     public static class PharmacyLocationRequest {
         private String locationName;

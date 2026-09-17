@@ -56,6 +56,17 @@ public class PharmacyLocationService {
         return locationRepository.findByPharmacyIdAndIsPrimaryTrue(pharmacyId);
     }
 
+    /**
+     * Find pharmacy locations within a given distance (in meters) from a point.
+     * @param longitude longitude of the center point
+     * @param latitude latitude of the center point
+     * @param distance distance in meters
+     * @return list of nearby pharmacy locations
+     */
+    public List<PharmacyLocation> findNearby(Double longitude, Double latitude, Double distance) {
+        return locationRepository.findNearby(longitude, latitude, distance);
+    }
+
     @Transactional
     public PharmacyLocation updatePharmacyLocation(Long locationId, PharmacyLocation locationDetails) {
         PharmacyLocation location = locationRepository.findById(locationId)
