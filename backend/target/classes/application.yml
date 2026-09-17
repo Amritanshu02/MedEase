@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+# Actuator configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+# Set default profile to dev for development
+spring:
+  profiles:
+    active: dev
