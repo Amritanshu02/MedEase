@@ -84,7 +84,7 @@ public class MedicineCsvUploadService {
      * @return Medicine object
      * @throws IllegalArgumentException if the line is invalid
      */
-    private Medicine parseCsvLine(String line, int rowNumber) {
+    Medicine parseCsvLine(String line, int rowNumber) {
         String[] values = line.split(",", -1); // -1 to preserve empty trailing values
 
         if (values.length < 7) {

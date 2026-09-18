@@ -47,8 +47,8 @@ public class SecurityConfig {
                 .exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)
                 .and()
                 .authorizeHttpRequests(authz -> authz
-                        // Allow all requests to access auth endpoints
-                        .requestMatchers("/api/auth/**").permitAll()
+                        // Allow all requests to access auth endpoints and health check
+                        .requestMatchers("/api/auth/**", "/health").permitAll()
                         // Any other request must be authenticated
                         .anyRequest().authenticated()
                 );

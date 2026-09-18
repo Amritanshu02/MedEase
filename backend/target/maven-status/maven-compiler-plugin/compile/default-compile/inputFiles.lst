@@ -17,6 +17,7 @@ D:\Java Dev\New folder\backend\src\main\java\com\example\medlocal\security\dtos\
 D:\Java Dev\New folder\backend\src\main\java\com\example\medlocal\security\JwtAuthenticationEntryPoint.java
 D:\Java Dev\New folder\backend\src\main\java\com\example\medlocal\security\dtos\pharmacy\PharmacyInventoryResponse.java
 D:\Java Dev\New folder\backend\src\main\java\com\example\medlocal\security\JwtRequestFilter.java
+D:\Java Dev\New folder\backend\src\main\java\com\example\medlocal\config\CorsConfig.java
 D:\Java Dev\New folder\backend\src\main\java\com\example\medlocal\repository\UserRepository.java
 D:\Java Dev\New folder\backend\src\main\java\com\example\medlocal\security\dtos\pharmacy\PharmacyLocationResponse.java
 D:\Java Dev\New folder\backend\src\main\java\com\example\medlocal\model\User.java

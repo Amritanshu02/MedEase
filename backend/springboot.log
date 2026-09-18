@@ -1,0 +1,111 @@
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/flywaydb/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/io/github/git-commit-id/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/jooq/maven-metadata.xml
+Progress (1): 398 BProgress (2): 398 B | 255 BProgress (3): 398 B | 255 B | 249 BProgress (4): 398 B | 255 B | 249 B | 234 B                                           Downloaded from central: https://repo.maven.apache.org/maven2/org/jooq/maven-metadata.xml (398 B at 528 B/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/io/github/git-commit-id/maven-metadata.xml (255 B at 337 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/maven-metadata.xml
+Downloaded from central: https://repo.maven.apache.org/maven2/org/flywaydb/maven-metadata.xml (234 B at 306 B/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/maven-metadata.xml (249 B at 326 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/liquibase/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/graalvm/buildtools/maven-metadata.xml
+Progress (1): 3.9 kBProgress (2): 3.9 kB | 394 BProgress (2): 7.7 kB | 394 BProgress (3): 7.7 kB | 394 B | 242 BProgress (3): 10 kB | 394 B | 242 B Progress (4): 10 kB | 394 B | 242 B | 375 B                                           Downloaded from central: https://repo.maven.apache.org/maven2/org/graalvm/buildtools/maven-metadata.xml (242 B at 3.0 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (10 kB at 125 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/liquibase/maven-metadata.xml (394 B at 4.1 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/maven-metadata.xml (375 B at 3.6 kB/s)
+Progress (1): 3.7 kBProgress (1): 7.4 kBProgress (1): 13 kB Progress (1): 19 kBProgress (1): 20 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (20 kB at 263 kB/s)
+[INFO] 
+[INFO] --------------------< com.example:medlocal-backend >--------------------
+[INFO] Building medlocal-backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.2.0:run (default-cli) > test-compile @ medlocal-backend >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ medlocal-backend ---
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ medlocal-backend ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ medlocal-backend ---
+[INFO] skip non existing resourceDirectory D:\Java Dev\New folder\backend\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ medlocal-backend ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot:3.2.0:run (default-cli) < test-compile @ medlocal-backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.2.0:run (default-cli) @ medlocal-backend ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-09-18T10:11:27.960+05:30  INFO 9728 --- [           main] c.example.medlocal.MedlocalApplication   : Starting MedlocalApplication using Java 25.0.1 with PID 9728 (D:\Java Dev\New folder\backend\target\classes started by AMRITANSHU in D:\Java Dev\New folder\backend)
+2026-09-18T10:11:27.965+05:30  INFO 9728 --- [           main] c.example.medlocal.MedlocalApplication   : The following 1 profile is active: "dev"
+2026-09-18T10:11:30.921+05:30  INFO 9728 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-18T10:11:31.084+05:30  INFO 9728 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 141 ms. Found 5 JPA repository interfaces.
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (file:/C:/Users/AMRITANSHU/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.16/tomcat-embed-core-10.1.16.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+2026-09-18T10:11:33.093+05:30  INFO 9728 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2026-09-18T10:11:33.108+05:30  INFO 9728 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-18T10:11:33.109+05:30  INFO 9728 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-09-18T10:11:33.209+05:30  INFO 9728 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-09-18T10:11:33.210+05:30  INFO 9728 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5094 ms
+2026-09-18T10:11:33.831+05:30  INFO 9728 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-18T10:11:33.936+05:30  INFO 9728 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2026-09-18T10:11:33.958+05:30  INFO 9728 --- [           main] o.h.spatial.integration.SpatialService   : HHH80000001: hibernate-spatial integration enabled : true
+2026-09-18T10:11:34.014+05:30  INFO 9728 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-09-18T10:11:34.209+05:30  INFO 9728 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-18T10:11:34.475+05:30  INFO 9728 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:medlocaldb user=SA
+2026-09-18T10:11:34.477+05:30  INFO 9728 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-18T10:11:34.516+05:30  WARN 9728 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-18T10:11:34.560+05:30  INFO 9728 --- [           main] org.hibernate.spatial                    : HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.h2gis.H2GisDialectContributor
+2026-09-18T10:11:34.767+05:30  INFO 9728 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-18T10:11:34.795+05:30  INFO 9728 --- [           main] org.hibernate.spatial                    : HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.h2gis.H2GisDialectContributor
+2026-09-18T10:11:35.232+05:30  INFO 9728 --- [           main] org.hibernate.spatial                    : HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.h2gis.H2GisDialectContributor
+2026-09-18T10:11:36.142+05:30  INFO 9728 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table medicines (id bigint generated by default as identity, brand_name varchar(255), category varchar(255) not null, created_at timestamp(6), description varchar(255), generic_name varchar(255) not null, is_active boolean not null, name varchar(255) not null, requires_prescription boolean not null, sub_category varchar(255), updated_at timestamp(6), primary key (id))
+Hibernate: create table pharmacies (id bigint generated by default as identity, address_line1 varchar(255) not null, address_line2 varchar(255), city varchar(255) not null, country varchar(255) not null, created_at timestamp(6), is_active boolean not null, license_number varchar(255) not null, name varchar(255) not null, phone varchar(255) not null, postal_code varchar(255) not null, state varchar(255) not null, updated_at timestamp(6), admin_user_id bigint, primary key (id))
+Hibernate: create table pharmacy_inventory (id bigint generated by default as identity, created_at timestamp(6), expiry_date timestamp(6), is_available boolean not null, price numeric(10,2) not null, stock_quantity integer not null, updated_at timestamp(6), medicine_id bigint not null, pharmacy_id bigint not null, primary key (id))
+Hibernate: create table pharmacy_locations (id bigint generated by default as identity, address_line1 varchar(255) not null, address_line2 varchar(255), city varchar(255) not null, coordinates geometry(Point, 4326) not null, country varchar(255) not null, created_at timestamp(6), is_active boolean not null, is_primary boolean not null, location_name varchar(255) not null, phone varchar(255), postal_code varchar(255) not null, state varchar(255) not null, updated_at timestamp(6), pharmacy_id bigint not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, email varchar(255) not null, password varchar(255) not null, role varchar(255) not null check (role in ('CUSTOMER','PHARMACY_ADMIN','DELIVERY_PARTNER','PLATFORM_ADMIN')), username varchar(255) not null, primary key (id))
+Hibernate: alter table if exists medicines drop constraint if exists UKb6dv5kee0aoi485ijmu3n63ic
+Hibernate: alter table if exists medicines add constraint UKb6dv5kee0aoi485ijmu3n63ic unique (name)
+Hibernate: alter table if exists pharmacies drop constraint if exists UK5opqqoxkew59mhmfeioxtu6dd
+Hibernate: alter table if exists pharmacies add constraint UK5opqqoxkew59mhmfeioxtu6dd unique (name)
+Hibernate: alter table if exists pharmacies drop constraint if exists UKias0wno0h3b9fsxcof16sifo0
+Hibernate: alter table if exists pharmacies add constraint UKias0wno0h3b9fsxcof16sifo0 unique (license_number)
+Hibernate: alter table if exists pharmacies drop constraint if exists UK_os47405geid9ubbmqi3ov7n5u
+Hibernate: alter table if exists pharmacies add constraint UK_os47405geid9ubbmqi3ov7n5u unique (admin_user_id)
+Hibernate: alter table if exists pharmacy_inventory drop constraint if exists UKb0ai82at6cim7bqgl0ky3o7wb
+Hibernate: alter table if exists pharmacy_inventory add constraint UKb0ai82at6cim7bqgl0ky3o7wb unique (pharmacy_id, medicine_id)
+Hibernate: alter table if exists users drop constraint if exists UKr43af9ap4edm43mmtq01oddj6
+Hibernate: alter table if exists users add constraint UKr43af9ap4edm43mmtq01oddj6 unique (username)
+Hibernate: alter table if exists users drop constraint if exists UK6dotkott2kjsp8vw4d0m25fb7
+Hibernate: alter table if exists users add constraint UK6dotkott2kjsp8vw4d0m25fb7 unique (email)
+Hibernate: alter table if exists pharmacies add constraint FKhra3q2rt20flgrym777xlc8ps foreign key (admin_user_id) references users
+Hibernate: alter table if exists pharmacy_inventory add constraint FKj2vwjwuy2946wuhuf1fovgg5w foreign key (medicine_id) references medicines
+Hibernate: alter table if exists pharmacy_inventory add constraint FK3f2iy58u9k69e0henlsunv1ra foreign key (pharmacy_id) references pharmacies
+Hibernate: alter table if exists pharmacy_locations add constraint FKm66i6bl9i5xwx6qwy0nkr15je foreign key (pharmacy_id) references pharmacies
+2026-09-18T10:11:36.244+05:30  INFO 9728 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-18T10:11:37.541+05:30  INFO 9728 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-18T10:11:38.222+05:30  WARN 9728 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-18T10:11:38.959+05:30  INFO 9728 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2026-09-18T10:11:39.065+05:30  INFO 9728 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3c73d613, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@21fbfdd5, org.springframework.security.web.context.SecurityContextHolderFilter@53a65166, org.springframework.security.web.header.HeaderWriterFilter@219aab91, org.springframework.web.filter.CorsFilter@656bd8e, org.springframework.security.web.authentication.logout.LogoutFilter@2bd24c09, com.example.medlocal.security.JwtRequestFilter@1315d910, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6ba6f4e7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6a7c1725, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7f336491, org.springframework.security.web.session.SessionManagementFilter@4a9e6ea7, org.springframework.security.web.access.ExceptionTranslationFilter@2700609f, org.springframework.security.web.access.intercept.AuthorizationFilter@ff7042c]
+2026-09-18T10:11:39.779+05:30  INFO 9728 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path ''
+2026-09-18T10:11:39.789+05:30  INFO 9728 --- [           main] c.example.medlocal.MedlocalApplication   : Started MedlocalApplication in 13.035 seconds (process running for 13.703)

@@ -29,6 +29,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import com.example.medlocal.service.pharmacy.MedicineCsvUploadService;
 
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Page;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -304,25 +306,23 @@ public class PharmacyController {
     }
 
     @GetMapping("/medicines")
-    public ResponseEntity<?> getAllMedicines() {
+    public ResponseEntity<?> getAllMedicines(Pageable pageable) {
         try {
-            List<Medicine> medicines = medicineService.getAllMedicines();
-            List<MedicineResponse> responses = medicines.stream()
-                    .map(medicine -> MedicineResponse.builder()
-                            .id(medicine.getId())
-                            .name(medicine.getName())
-                            .genericName(medicine.getGenericName())
-                            .brandName(medicine.getBrandName())
-                            .description(medicine.getDescription())
-                            .category(medicine.getCategory())
-                            .subCategory(medicine.getSubCategory())
-                            .requiresPrescription(medicine.getRequiresPrescription())
-                            .isActive(medicine.getIsActive())
-                            .createdAt(medicine.getCreatedAt())
-                            .updatedAt(medicine.getUpdatedAt())
-                            .build())
-                    .collect(Collectors.toList());
-            return ResponseEntity.ok(responses);
+            Page<Medicine> medicinePage = medicineService.getAllMedicines(pageable);
+            Page<MedicineResponse> responsePage = medicinePage.map(medicine -> MedicineResponse.builder()
+                    .id(medicine.getId())
+                    .name(medicine.getName())
+                    .genericName(medicine.getGenericName())
+                    .brandName(medicine.getBrandName())
+                    .description(medicine.getDescription())
+                    .category(medicine.getCategory())
+                    .subCategory(medicine.getSubCategory())
+                    .requiresPrescription(medicine.getRequiresPrescription())
+                    .isActive(medicine.getIsActive())
+                    .createdAt(medicine.getCreatedAt())
+                    .updatedAt(medicine.getUpdatedAt())
+                    .build());
+            return ResponseEntity.ok(responsePage);
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Internal server error: " + e.getMessage());
         }

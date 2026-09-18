@@ -47,6 +47,7 @@ com\example\medlocal\model\pharmacy\PharmacyLocation.class
 com\example\medlocal\model\User$Role.class
 com\example\medlocal\service\pharmacy\MedicineCsvUploadService.class
 com\example\medlocal\controller\HealthController.class
+com\example\medlocal\config\CorsConfig.class
 com\example\medlocal\service\pharmacy\PharmacyInventoryService.class
 com\example\medlocal\MedlocalApplication.class
 com\example\medlocal\security\dtos\pharmacy\PharmacyInventoryResponse$PharmacyInventoryResponseBuilder.class

@@ -3,6 +3,8 @@ package com.example.medlocal.service.pharmacy;
 import com.example.medlocal.model.pharmacy.Medicine;
 import com.example.medlocal.repository.pharmacy.MedicineRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,6 +36,10 @@ public class MedicineService {
 
     public List<Medicine> getAllMedicines() {
         return medicineRepository.findAll();
+    }
+
+    public Page<Medicine> getAllMedicines(Pageable pageable) {
+        return medicineRepository.findAll(pageable);
     }
 
     public List<Medicine> getActiveMedicines() {
